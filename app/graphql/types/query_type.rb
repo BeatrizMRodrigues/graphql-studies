@@ -13,5 +13,13 @@ module Types
     def test_field
       "Hello World!"
     end
+
+    field :game, GameType, 'Find a game by ID' do
+      argument :id, ID
+    end
+
+    def game(id:)
+      Game.find(id)
+    end
   end
 end
